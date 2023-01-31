@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  standalone: true,
+  imports: [RouterModule],
+  template: `
+    <a routerLink="/home">home</a>
+    <a routerLink="/settings">settings</a>
+
+    <router-outlet></router-outlet>
+  `,
 })
-export class AppComponent {
-  title = 'ngrx-router-store';
-}
+export class AppComponent {}
